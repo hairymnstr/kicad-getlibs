@@ -6,10 +6,11 @@ KiCad footprint libraries from GitHub.
 
 New style KiCad footprint libraries are folders named \*.pretty and are stored
 as separate repos at <https://github.com/kicad>.  You can use them directly from
-GitHub using the GitHub library type, but if you haven't got an internet connection
-or want them local for some reason there are over 70 to clone individually.
+GitHub using the GitHub library type, but if you haven't got a permanent internet 
+connection or want them local for some reason there are over 70 to clone individually.
 
 This script uses the GitHub API to:
+
 1. Clone a repository if it is one of the \*.pretty libraries and you don't have it
 2. Pull the repository if you already have it locally (does an update).
 3. Optionally update your fp-lib-table marking the auto-maintained repositories
