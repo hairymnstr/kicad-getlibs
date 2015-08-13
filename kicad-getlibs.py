@@ -14,7 +14,7 @@ def usage():
     -h, --help    Print this help and exit
     -v, --verbose Print full git output for each repository
     -q, --quiet   Don't print anything at all
-    -t, --table   Update/overwrite ~/fp-lib-table for the current user.  The 
+    -t, --table   Update/overwrite ~/.config/kicad/fp-lib-table for the current user.  The 
                   first run will move fp-lib-table to fp-lib-table-old and 
                   replace it, auto generated rows will have the option
                   "auto=true" added.  Future runs will only update/remove rows
@@ -108,7 +108,7 @@ for repo in full_list:
       print "ignore:", repo_name
 
 if update_table:
-  if os.path.exists(os.path.expanduser("~/fp-lib-table")):
+  if os.path.exists(os.path.expanduser("~/.config/kicad/fp-lib-table")):
     libs = read_fp_lib_table()
 
     found_auto = False
@@ -122,9 +122,9 @@ if update_table:
 
     if not found_auto:
       print "No auto update libraries found, (is this a first run?)"
-      print "Replacing fp-lib-table, old one will be stored at ~/fp-lib-table-old"
+      print "Replacing fp-lib-table, old one will be stored at ~/.config/kicad/fp-lib-table-old"
 
-      shutil.copy2(os.path.expanduser("~/fp-lib-table"), os.path.expanduser("~/fp-lib-table-old"))
+      shutil.copy2(os.path.expanduser("~/.config/kicad/fp-lib-table"), os.path.expanduser("~/.config/kicad/fp-lib-table-old"))
 
       # dump the library list
       new_libs = []

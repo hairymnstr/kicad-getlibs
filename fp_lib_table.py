@@ -1,7 +1,7 @@
 import os
 
 def read_fp_lib_table():
-  fr = open(os.path.expanduser("~/fp-lib-table"), "r")
+  fr = open(os.path.expanduser("~/.config/kicad/fp-lib-table"), "r")
   d = fr.read()
   fr.close()
 
@@ -28,7 +28,7 @@ def read_fp_lib_table():
   return libs
 
 def write_fp_lib_table(libs):
-  fw = open(os.path.expanduser("~/fp-lib-table"), "w")
+  fw = open(os.path.expanduser("~/.config/kicad/fp-lib-table"), "w")
 
   fw.write("(fp_lib_table\n")
 
